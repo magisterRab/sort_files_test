@@ -5,27 +5,6 @@ project(sort_files)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# Check path for external libs
-if(DEFINED EXTERNAL_LIBS_PATH)
-    message("Use ${EXTERNAL_LIBS_PATH} as path for external libs")
-
-    include_directories(SYSTEM ${EXTERNAL_LIBS_PATH}/include)
-    link_directories(${EXTERNAL_LIBS_PATH}/lib)
-    list(APPEND CMAKE_FIND_ROOT_PATH ${EXTERNAL_LIBS_PATH})
-    list(APPEND CMAKE_MODULE_PATH ${EXTERNAL_LIBS_PATH}/cmake)
-endif()
-
-
-# Check path for sniper libs
-if(DEFINED SNIPER_LIBS_PATH)
-    message("Use ${SNIPER_LIBS_PATH} as path for sniper libs")
-
-    include_directories(SYSTEM ${SNIPER_LIBS_PATH}/include)
-    link_directories(${SNIPER_LIBS_PATH}/lib)
-    list(APPEND CMAKE_FIND_ROOT_PATH ${SNIPER_LIBS_PATH})
-    list(APPEND CMAKE_MODULE_PATH ${SNIPER_LIBS_PATH}/cmake)
-endif()
-
 
 # Load modules
 find_package(Threads)
